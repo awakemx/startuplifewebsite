@@ -1,0 +1,40 @@
+//Mixins
+
+//Media queries
+@mixin mobile
+  @media screen and (max-width: $mobile)
+    @include span-columns(12)
+
+@mixin tablet
+  @media screen and (max-width: $tablet)
+    @include span-columns(12)
+
+//animation
+@mixin animate($seconds)
+  -webkit-transition: all $seconds ease-in-out
+  -moz-transition: all $seconds ease-in-out
+  -o-transition: all $seconds ease-in-out
+  transition: all $seconds ease-in-out
+
+//border radius
+@mixin border-all($pixels)
+  @include border-top-radius($pixels)
+  @include border-right-radius($pixels)
+  @include border-bottom-radius($pixels)
+  @include border-left-radius($pixels)
+
+// buttons
+@mixin base-button($color)
+  padding: em(5) em(10)
+  //text-transform: uppercase
+  display: inline-block
+  border: none
+  font-size: 10pt
+  @include border-all(2px)
+  color: white !important
+  background: $color
+  text-decoration: none !important
+  &:hover
+    //background: $color
+    background: darken($color,10)
+    color: white !important

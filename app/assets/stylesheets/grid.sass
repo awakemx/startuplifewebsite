@@ -1,0 +1,43 @@
+// Base Grid with Neat
+.container
+  @include outer-container
+  &:after
+    @include clearfix
+  .row
+    @include clearfix
+    .col-1
+      @include span-columns(1)
+      @include mobile
+    .col-2
+      @include span-columns(2)
+      @include mobile
+    .col-3
+      @include span-columns(3)
+      @include mobile
+    .col-4
+      @include span-columns(4)
+      @include mobile
+    .col-5
+      @include span-columns(5)
+      @include mobile
+    .col-6
+      @include span-columns(6)
+      @include mobile
+    .col-7
+      @include span-columns(7)
+      @include mobile
+    .col-8
+      @include span-columns(8)
+      @include mobile
+    .col-9
+      @include span-columns(9)
+      @include mobile
+    .col-10
+      @include span-columns(10)
+      @include mobile
+    .col-11
+      @include span-columns(11)
+      @include mobile
+    .col-12
+      @include span-columns(12)
+      @include mobile

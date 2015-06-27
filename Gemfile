@@ -15,9 +15,11 @@ gem 'carrierwave'
 gem 'fog'
 gem 'friendly_id'
 
+gem 'bourbon'
+gem 'neat'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
