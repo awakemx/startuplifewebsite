@@ -9,7 +9,7 @@
     <div class="card-header">
       <div class="row">
         <div class="col-9">
-          <%= startup_weekend.titulo %>
+          <%= startup_weekend.titulo.truncate(29) %>
         </div>
         <div class="col-3 push-rigth">
           <%= twitter_icon(startup_weekend.twitter) if startup_weekend.twitter? %>
@@ -20,7 +20,7 @@
     </div>
     <div class="card-copy">
       <p>
-        <%= startup_weekend.descripcion %>
+        <%= startup_weekend.descripcion.truncate(250) %>
       </p>
     </div>
   </div>
