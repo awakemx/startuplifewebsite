@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
+  config.main_app_name = ['STARTUPLIFE', 'Admin']
   config.authenticate_with do
+  config.label_methods << :nombre
     warden.authenticate! scope: :user
   end
   config.current_user_method(&:current_user)
@@ -17,9 +19,13 @@ RailsAdmin.config do |config|
   end
 
   config.model StartupWeekend do
+    object_label_method :titulo
     edit do
       field :titulo
       field :fecha
+      field :correo do
+        label 'Correo de Contacto'
+      end
       field :sitioweb do
         label 'Sitio Web'
       end
@@ -29,6 +35,7 @@ RailsAdmin.config do |config|
       field :descripcion, :froala do
         label 'Descripción'
       end
+      field :organizadores
     end
   end
 end
