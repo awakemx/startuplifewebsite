@@ -3,6 +3,18 @@ class StartupWeekendsController < ApplicationController
     @startup_weekends = StartupWeekend.all
   end
 
+  def pasado
+    @startup_weekends = StartupWeekend.pasado
+  end
+
+  def presente
+    @startup_weekends = StartupWeekend.presente
+  end
+
+  def futuro
+    @startup_weekends = StartupWeekend.futuro
+  end
+
   def show
     @startup_weekend = StartupWeekend.friendly.find(params[:id])
   end

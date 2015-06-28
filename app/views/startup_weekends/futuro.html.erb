@@ -1,3 +1,13 @@
+<div class="evento-title-futuro">
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+          <h2>Eventos Futuros</h2>
+        </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <br>
   <div class="cards row">
@@ -8,12 +18,12 @@
           <div class="topic <%= startup_weekend.status_class %>">
             <%= startup_weekend.status %>
           </div>
-          <%= link_to (image_tag imagen_handler(startup_weekend.logo), alt: startup_weekend.titulo, class: 'logotipo'), startup_weekend %>
+          <%= image_tag imagen_handler(startup_weekend.logo), alt: startup_weekend.titulo, class: 'logotipo' %>
         </div>
         <div class="card-header">
           <div class="row">
             <div class="col-9">
-              <%= startup_weekend.titulo %> <%= startup_weekend.fecha %>
+              <%= startup_weekend.titulo %>
             </div>
             <div class="col-3 push-rigth">
               <%= twitter_icon(startup_weekend.twitter) if startup_weekend.twitter? %>
@@ -24,7 +34,7 @@
         </div>
         <div class="card-copy">
           <p>
-            <%= startup_weekend.descripcion.truncate(250) %>
+            <%= startup_weekend.descripcion %>
           </p>
         </div>
       </div>

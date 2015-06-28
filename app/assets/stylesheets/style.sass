@@ -51,17 +51,38 @@ footer
   &.presente
     border-color: $bodyColor
     color: $bodyColor
+    &:hover
+      background: $bodyColor
+      color: white
   &.pasado
     border-color: $colorMediumGray
     color: $colorMediumGray
+    &:hover
+      background: $colorMediumGray
+      color: white
   &.futuro
     border-color: $colorTwitter
     color: $colorTwitter
+    &:hover
+      background: $colorTwitter
+      color: white
 
 .colorBase
   color: $bodyColor
 .back-gray
   background: $colorGray
+  padding: em(10)
+  .idea
+    border: 1px solid white
+    padding: em(10)
+    +border-all(5px)
+    h5,h6
+      margin: 0
+    h6
+      color: $bodyColor
+    p
+      margin-bottom: 0
+      font-size: 9pt
 .push-rigth
   text-align: right
 .keep-center

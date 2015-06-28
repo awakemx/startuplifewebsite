@@ -22,9 +22,9 @@ class StartupWeekend < ActiveRecord::Base
   has_many :organizadores
   has_many :ideas_presentadas
   default_scope     ->{ order(:titulo) }
-  scope :futuro,    ->{ where("fecha > ?", Date.today) }
-  scope :presente,  ->{ where('fecha = ? AND fecha <= ?', Date.today, Date.today + 2.days) }
-  scope :pasado,    ->{ where("fecha < ?", Date.today) }
+  scope :futuro,    ->{ where("fecha > ?", Date.today + 3.days) }
+  scope :pasado,    ->{ where("fecha < ?", Date.today - 3.days) }
+  scope :presente,  ->{ where("fecha between ? and ?", Date.today - 2.days, Date.today) }
 
   def status
       futuro? || pasado? || en_accion?
@@ -35,21 +35,21 @@ class StartupWeekend < ActiveRecord::Base
   end
 
   def futuro?
-      "pasará" if fecha > Date.today
+      "pasará" if fecha > Date.today + 3.days
   end
   def pasado?
-      "ya pasó" if fecha < Date.today
+      "ya pasó" if fecha < Date.today - 3.days
   end
   def en_accion?
     "en vivo" if !pasado? && !futuro?
   end
   def futuro_class?
-      "futuro" if fecha > Date.today
+      "futuro" if futuro?
   end
   def pasado_class?
-      "pasado" if fecha < Date.today
+      "pasado" if pasado?
   end
   def en_accion_class?
-    "presente" if !pasado? && !futuro?
+    "presente" if en_accion?
   end
 end

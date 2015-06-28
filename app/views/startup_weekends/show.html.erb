@@ -12,20 +12,21 @@
   <div class="row datos-evento">
     <div class="col-5">
       <br>
-      <img src="<%= @startup_weekend.logo %>" class="logotipo"> <br>
-      <small class='colorBase'><%= @startup_weekend.fecha.strftime('%d/%B/%Y') %></small>
+      <%= image_tag imagen_handler(@startup_weekend.logo), alt: @startup_weekend.titulo, class: 'logotipo' %>
+      <br>
+      <small class='colorBase'><%= @startup_weekend.fecha.strftime('%d / %B / %Y') %></small>
       <p>
         <%= @startup_weekend.descripcion %>
       </p>
       <ul class="actions">
         <li>
-          <a href="http://www.twitter.com/<%= @startup_weekend.twitter %>" target='_blank'><i class="fa fa-twitter"></i> <%= @startup_weekend.twitter %></a>
+          <%= twitter_handler(@startup_weekend.twitter) if @startup_weekend.twitter? %>
         </li>
         <li>
-          <a href="http://www.twitter.com/<%= @startup_weekend.facebook %>" target='_blank'><i class="fa fa-facebook"></i> <%= @startup_weekend.facebook %></a>
+          <%= facebook_handler(@startup_weekend.facebook) if @startup_weekend.facebook? %>
         </li>
         <li>
-          <a href="http://<%= @startup_weekend.sitioweb %>" target='_blank'><i class="fa fa-globe"></i> <%= @startup_weekend.sitioweb %></a>
+          <%= internet_handler(@startup_weekend.sitioweb) if @startup_weekend.sitioweb? %>
         </li>
       </ul>
       <div class="equipo">
@@ -51,9 +52,25 @@
       </div>
     </div>
 
-    <div class="col-7 back-gray">
-      <br>
-      <%= render partial: 'shared/card_event' %>
+    <div class="col-7 ">
+      <div class="back-gray">
+        <h4><i class="fa fa-lightbulb-o"></i> Ideas</h4>
+        <% if @startup_weekend.ideas_presentadas.count < 1 %>
+          <small>No existen ideas aun</small>
+        <% else %>
+          <% @startup_weekend.ideas_presentadas.each do |idea| %>
+            <div class="idea">
+              <h5><%= idea.nombre %></h5>
+              <h6><%= idea.emprendedor %></h6>
+              <p>
+                <%= idea.descripcion %>
+              </p>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="cards row">
+        </div>
+      </div>
     </div>
   </div>
 </div>

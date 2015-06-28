@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :startup_weekends
   root 'startup_weekends#index'
 
-  get 'eventos', to: 'public#evento', as: :eventos
-  get 'startup', to: 'public#startup', as: :startup
+  get 'pasado', to: 'startup_weekends#pasado', as: :pasado
+  get 'presente', to: 'startup_weekends#presente', as: :presente
+  get 'futuro', to: 'startup_weekends#futuro', as: :futuro
+
 end

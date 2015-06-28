@@ -16,6 +16,7 @@ class IdeaPresentada < ActiveRecord::Base
   belongs_to :startup_weekend
   extend FriendlyId
   friendly_id :titulo, use: :slugged
-  has_many :organizadores
-  default_scope     ->{ order(:titulo) }
+  default_scope     ->{ order(:nombre) }
+  validates :nombre, :descripcion, :emprendedor, :startup_weekend, presence: true
+
 end

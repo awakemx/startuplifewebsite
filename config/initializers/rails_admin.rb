@@ -18,6 +18,15 @@ RailsAdmin.config do |config|
     show_in_app
   end
 
+  config.model IdeaPresentada do
+    edit do
+      field :nombre
+      field :emprendedor
+      field :descripcion
+      field :startup_weekend
+    end
+  end
+
   config.model StartupWeekend do
     object_label_method :titulo
     edit do
