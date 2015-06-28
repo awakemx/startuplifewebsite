@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628021424) do
+ActiveRecord::Schema.define(version: 20150628213909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,22 @@ ActiveRecord::Schema.define(version: 20150628021424) do
 
   add_index "startup_weekends", ["slug"], name: "index_startup_weekends_on_slug", unique: true, using: :btree
 
+  create_table "startups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "nombre"
+    t.string   "logo"
+    t.text     "descripcion"
+    t.string   "pagina"
+    t.string   "slug"
+    t.integer  "startup_weekend_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "startups", ["slug"], name: "index_startups_on_slug", unique: true, using: :btree
+  add_index "startups", ["startup_weekend_id"], name: "index_startups_on_startup_weekend_id", using: :btree
+  add_index "startups", ["user_id"], name: "index_startups_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -80,4 +96,6 @@ ActiveRecord::Schema.define(version: 20150628021424) do
 
   add_foreign_key "ideas_presentadas", "startup_weekends"
   add_foreign_key "organizadores", "startup_weekends"
+  add_foreign_key "startups", "startup_weekends"
+  add_foreign_key "startups", "users"
 end

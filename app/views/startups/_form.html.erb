@@ -1,0 +1,45 @@
+<%= form_for [@startup_weekend, @startup], url: startup_weekend_startups_path do |f| %>
+  <% if @startup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@startup.errors.count, "error") %> prohibited this startup from being saved:</h2>
+
+      <ul>
+      <% @startup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br>
+    <%= f.text_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :pagina %><br>
+    <%= f.text_field :pagina %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :startup_weekend_id %><br>
+    <%= f.text_field :startup_weekend_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
