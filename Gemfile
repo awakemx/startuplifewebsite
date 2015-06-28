@@ -14,12 +14,21 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'fog'
 gem 'friendly_id'
+gem 'wysiwyg-rails', github: 'igmarin/wysiwyg-rails'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-facebook', '~> 2.0.0'
+gem 'omniauth-linkedin-oauth2', '~> 0.1.5'
+gem 'omniauth-twitter', '~> 1.1.0'
 
+#assets
 gem 'bourbon'
 gem 'neat'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'rails_12factor', group: :production
