@@ -58,10 +58,13 @@
         <% if @startup_weekend.ideas_presentadas.count < 1 %>
           <small>No existen ideas aun</small>
         <% else %>
+          <p>
+            <small><%= @startup_weekend.ideas_presentadas.count %> ideas presentadas.</small>
+          </p>
           <% @startup_weekend.ideas_presentadas.each do |idea| %>
             <div class="idea">
               <h5><%= idea.nombre %></h5>
-              <h6><%= idea.emprendedor %></h6>
+              <h6>por <%= idea.emprendedor %></h6>
               <p>
                 <%= idea.descripcion %>
               </p>

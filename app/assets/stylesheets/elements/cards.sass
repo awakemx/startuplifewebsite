@@ -1,4 +1,6 @@
 .cards
+  .col-4:nth-child(3n)
+    margin-right: 0
   .card-event
     $base-border-color: gainsboro !default
     $base-border-radius: 3px !default
@@ -23,7 +25,7 @@
     border: $card-border
     box-shadow: 0 2px 4px darken($base-background-color, 10%)
     position: relative
-
+    margin-bottom: em(20)
 
     .card-image
       overflow: hidden
@@ -93,7 +95,7 @@
     border: $card-border
     box-shadow: 0 2px 4px darken($base-background-color, 10%)
     position: relative
-
+    margin-bottom: em(20)
 
     .card-image
       overflow: hidden
