@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20150628003248) do
     t.string   "slug"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "status"
     t.string   "facebook"
     t.string   "twitter"
     t.string   "sitioweb"
+    t.date     "fecha"
   end
 
   add_index "startup_weekends", ["slug"], name: "index_startup_weekends_on_slug", unique: true, using: :btree

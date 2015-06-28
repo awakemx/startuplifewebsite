@@ -19,6 +19,7 @@ RailsAdmin.config do |config|
   config.model StartupWeekend do
     edit do
       field :titulo
+      field :fecha
       field :sitioweb do
         label 'Sitio Web'
       end
