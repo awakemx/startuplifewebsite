@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ideas Presentadas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Emprendedor</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas_presentadas.each do |idea_presentada| %>
+      <tr>
+        <td><%= idea_presentada.nombre %></td>
+        <td><%= idea_presentada.descripcion %></td>
+        <td><%= idea_presentada.emprendedor %></td>
+        <td><%= idea_presentada.slug %></td>
+        <td><%= link_to 'Show', idea_presentada %></td>
+        <td><%= link_to 'Edit', edit_idea_presentada_path(idea_presentada) %></td>
+        <td><%= link_to 'Destroy', idea_presentada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Idea presentada', new_idea_presentada_path %>
