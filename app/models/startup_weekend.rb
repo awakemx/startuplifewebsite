@@ -21,10 +21,13 @@ class StartupWeekend < ActiveRecord::Base
   friendly_id :titulo, use: :slugged
   has_many :organizadores
   has_many :ideas_presentadas
+  has_many :startups
   default_scope     ->{ order(:titulo) }
   scope :futuro,    ->{ where("fecha > ?", Date.today + 3.days) }
   scope :pasado,    ->{ where("fecha < ?", Date.today - 3.days) }
   scope :presente,  ->{ where("fecha between ? and ?", Date.today - 2.days, Date.today) }
+
+  validates :fecha, :titulo, :descripcion, presence: true
 
   def status
       futuro? || pasado? || en_accion?

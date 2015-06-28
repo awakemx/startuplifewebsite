@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @startup.user %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @startup.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @startup.descripcion %>
+</p>
+
+<p>
+  <strong>Pagina:</strong>
+  <%= @startup.pagina %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @startup.slug %>
+</p>
+
+<p>
+  <strong>Startup weekend:</strong>
+  <%= @startup.startup_weekend %>
+</p>
+
+<%= link_to 'Edit', edit_startup_path(@startup) %> |
+<%= link_to 'Back', startups_path %>
