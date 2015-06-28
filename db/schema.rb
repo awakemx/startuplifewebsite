@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628010539) do
+ActiveRecord::Schema.define(version: 20150628021424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ideas_presentadas", force: :cascade do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "emprendedor"
+    t.string   "slug"
+    t.integer  "startup_weekend_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "ideas_presentadas", ["slug"], name: "index_ideas_presentadas_on_slug", unique: true, using: :btree
+  add_index "ideas_presentadas", ["startup_weekend_id"], name: "index_ideas_presentadas_on_startup_weekend_id", using: :btree
 
   create_table "organizadores", force: :cascade do |t|
     t.string   "nombre"
@@ -65,5 +78,6 @@ ActiveRecord::Schema.define(version: 20150628010539) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "ideas_presentadas", "startup_weekends"
   add_foreign_key "organizadores", "startup_weekends"
 end

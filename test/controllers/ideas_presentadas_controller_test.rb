@@ -18,7 +18,7 @@ class IdeasPresentadasControllerTest < ActionController::TestCase
 
   test "should create idea_presentada" do
     assert_difference('IdeaPresentada.count') do
-      post :create, idea_presentada: { descripcion: @idea_presentada.descripcion, emprendedor: @idea_presentada.emprendedor, nombre: @idea_presentada.nombre, slug: @idea_presentada.slug }
+      post :create, idea_presentada: { descripcion: @idea_presentada.descripcion, emprendedor: @idea_presentada.emprendedor, nombre: @idea_presentada.nombre, slug: @idea_presentada.slug, startup_weekend_id: @idea_presentada.startup_weekend_id }
     end
 
     assert_redirected_to idea_presentada_path(assigns(:idea_presentada))
@@ -35,7 +35,7 @@ class IdeasPresentadasControllerTest < ActionController::TestCase
   end
 
   test "should update idea_presentada" do
-    patch :update, id: @idea_presentada, idea_presentada: { descripcion: @idea_presentada.descripcion, emprendedor: @idea_presentada.emprendedor, nombre: @idea_presentada.nombre, slug: @idea_presentada.slug }
+    patch :update, id: @idea_presentada, idea_presentada: { descripcion: @idea_presentada.descripcion, emprendedor: @idea_presentada.emprendedor, nombre: @idea_presentada.nombre, slug: @idea_presentada.slug, startup_weekend_id: @idea_presentada.startup_weekend_id }
     assert_redirected_to idea_presentada_path(assigns(:idea_presentada))
   end
 

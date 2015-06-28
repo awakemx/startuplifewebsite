@@ -5,9 +5,11 @@ one:
   descripcion: MyText
   emprendedor: MyString
   slug: MyString
+  startup_weekend_id: 
 
 two:
   nombre: MyString
   descripcion: MyText
   emprendedor: MyString
   slug: MyString
+  startup_weekend_id: 
