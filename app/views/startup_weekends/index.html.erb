@@ -5,8 +5,8 @@
     <div class="col-4">
       <div class="card">
         <div class="card-image">
-          <div class="topic">
-            topic
+          <div class="topic <%= startup_weekend.status_class %>">
+            <%= startup_weekend.status %>
           </div>
           <%= link_to(startup_weekend) do %>
             <img src="<%= startup_weekend.logo %>" alt="<%= startup_weekend.titulo %>">

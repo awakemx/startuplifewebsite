@@ -1,15 +1,10 @@
 class StartupWeekendsController < ApplicationController
-  before_action :set_startup_weekend, only: [:show, :edit, :update, :destroy]
-
-  # GET /startup_weekends
-  # GET /startup_weekends.json
   def index
     @startup_weekends = StartupWeekend.all
   end
 
-  # GET /startup_weekends/1
-  # GET /startup_weekends/1.json
   def show
+    @startup_weekend = StartupWeekend.friendly.find(params[:id])
   end
 
   # GET /startup_weekends/new

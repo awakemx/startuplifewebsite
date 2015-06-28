@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @idea_presentada.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @idea_presentada.descripcion %>
+</p>
+
+<p>
+  <strong>Emprendedor:</strong>
+  <%= @idea_presentada.emprendedor %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @idea_presentada.slug %>
+</p>
+
+<p>
+  <strong>Startup weekend:</strong>
+  <%= @idea_presentada.startup_weekend %>
+</p>
+
+<%= link_to 'Edit', edit_idea_presentada_path(@idea_presentada) %> |
+<%= link_to 'Back', ideas_presentadas_path %>
