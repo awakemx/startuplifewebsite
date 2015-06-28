@@ -10,9 +10,26 @@ a
   &:hover
     color: darken($bodyColor, 20)
 
-input
+input[type], textarea
   border: 1px $colorGray solid
   padding: em(10)
+  width: 100%
+  font-size: 11pt
+  margin: em(10) 0
+
+hr
+  border: none
+  width: 100%
+  height: em(1)
+  background: lighten($colorMediumGray, 30)
+
+textarea
+  height: em(200)
+
+select
+  border: none
+  font-size: 11pt
+  margin: em(10) 0
 
 // ID
 
@@ -41,7 +58,11 @@ footer
 .btn-default
   +base-button($bodyColor)
 
-.topic
+.btn-default-dark
+  +base-button($colorGray)
+  color: $colorMediumGray !important
+
+.topic-top
   border: 1px solid $colorMediumGray
   +border-all(3px)
   display: inline-block
@@ -67,11 +88,41 @@ footer
       background: $colorTwitter
       color: white
 
+.topic
+  border: 1px solid $colorMediumGray
+  +border-all(3px)
+  display: inline-block
+  padding: em(5)
+  font-size: 8pt
+  text-transform: uppercase
+  position: absolute
+  &.presente
+    border-color: $bodyColor
+    color: $bodyColor
+    &:hover
+      background: $bodyColor
+      color: white
+  &.pasado
+    border-color: $colorMediumGray
+    color: $colorMediumGray
+    &:hover
+      background: $colorMediumGray
+      color: white
+  &.futuro
+    border-color: $colorTwitter
+    color: $colorTwitter
+    &:hover
+      background: $colorTwitter
+      color: white
+
 .colorBase
   color: $bodyColor
 .back-gray
   background: $colorGray
   padding: em(10)
+  .col-4:nth-child(3n)
+    margin-right: 0
+
   h4
     margin-bottom: 0
   p

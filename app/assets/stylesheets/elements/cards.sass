@@ -30,17 +30,21 @@
     .card-image
       overflow: hidden
       padding: em(10)
-      height: em(200)
-      max-height: em(200)
+      height: em(120)
+      max-height: em(120)
       background-color: $card-image-hover-color
-
+      a
+        display: inline-block
+        height: 100%
+        width: 100%
       img
         @include transition (all 0.2s ease-in-out)
         border-top-left-radius: $base-border-radius
         border-top-right-radius: $base-border-radius
-        width: 100%
         opacity: 1
-        object-fit: cover
+        width: 100%
+        height: 100%
+        object-fit: contain
 
     .card-header
       @include transition (all 0.2s ease-in-out)
@@ -50,7 +54,7 @@
       font-weight: bold
       line-height: 1.5em
       padding: ($base-spacing / 3) ($base-spacing / 2)
-
+      font-size: 10pt
 
     .card-copy
       font-size: 0.9em
@@ -58,8 +62,10 @@
       height: em(180)
       padding: ($base-spacing / 2) ($base-spacing / 2)
 
+
       p
         margin: 0 0 ($base-spacing / 2)
+        font-size: 9pt
 
 
       img
@@ -98,18 +104,24 @@
     margin-bottom: em(20)
 
     .card-image
+      position: relative
       overflow: hidden
       padding: em(10)
       height: em(200)
       max-height: em(200)
       background-color: $card-image-hover-color
-
+      a
+        display: inline-block
+        height: 100%
+        width: 100%
       img
         @include transition (all 0.2s ease-in-out)
         border-top-left-radius: $base-border-radius
         border-top-right-radius: $base-border-radius
-        width: 100%
         opacity: 1
+        width: 100%
+        height: 100%
+        object-fit: contain
 
 
 

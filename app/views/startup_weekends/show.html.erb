@@ -1,8 +1,11 @@
 <div class="evento-title">
   <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
           <h2><%= @startup_weekend.titulo %></h2>
+        </div>
+        <div class="col-2 push-rigth">
+          <%= link_to 'regresar', root_path, class: 'btn-default-dark' %>
         </div>
     </div>
   </div>
@@ -31,6 +34,7 @@
       </ul>
       <div class="equipo">
         <h3>Organizadores</h3>
+        <%= link_to 'Agrega tu startup', new_startup_weekend_startup_path(@startup_weekend) %>
         <div class="row">
           <% @startup_weekend.organizadores.each do |organizador| %>
             <div class="col-4">
@@ -54,7 +58,39 @@
 
     <div class="col-7 ">
       <div class="back-gray">
-        <h4><i class="fa fa-lightbulb-o"></i> Ideas</h4>
+        <h4><i class="fa fa-lightbulb-o"></i> Ideas Trabajadas</h4>
+        <% if @startup_weekend.startups.count < 1 %>
+          <small>No existen ideas aun</small>
+        <% else %>
+          <p>
+            <small><%= @startup_weekend.startups.count %> ideas trabajadas.</small>
+          </p>
+          <div class="cards row">
+          <% @startup_weekend.startups.each do |startup| %>
+          <div class="col-4">
+            <div class="card-event">
+              <div class="card-image">
+                <%= link_to (image_tag imagen_handler(startup.logo), alt: startup.nombre, class: 'logotipo'), [startup.startup_weekend, startup] %>
+              </div>
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-12">
+                    <%= startup.nombre %>
+                  </div>
+                </div>
+              </div>
+              <div class="card-copy">
+                <p>
+                  <%= startup.descripcion.truncate(150) %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+        <hr>
+        <h4><i class="fa fa-lightbulb-o"></i> Ideas Generadas</h4>
         <% if @startup_weekend.ideas_presentadas.count < 1 %>
           <small>No existen ideas aun</small>
         <% else %>
@@ -71,8 +107,6 @@
             </div>
           <% end %>
         <% end %>
-        <div class="cards row">
-        </div>
       </div>
     </div>
   </div>

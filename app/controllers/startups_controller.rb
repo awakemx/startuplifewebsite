@@ -1,6 +1,7 @@
 class StartupsController < ApplicationController
   before_action :set_startup, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+  before_filter :set_startup_weekend
 
   def index
     @startups = Startup.all
@@ -23,10 +24,11 @@ class StartupsController < ApplicationController
   def create
     @startup = Startup.new(startup_params)
     @startup.user_id = current_user.id
+    @startup.startup_weekend_id = @startup_weekend.id
 
     respond_to do |format|
       if @startup.save
-        format.html { redirect_to [@startup_weekend, @startup], notice: 'Startup was successfully created.' }
+        format.html { redirect_to @startup_weekend, notice: 'Startup was successfully created.' }
         format.json { render :show, status: :created, location: [@startup_weekend, @startup] }
       else
         format.html { render :new }
@@ -65,6 +67,9 @@ class StartupsController < ApplicationController
       @startup = Startup.friendly.find(params[:id])
     end
 
+    def set_startup_weekend
+      @startup_weekend = StartupWeekend.friendly.find(params[:startup_weekend_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def startup_params
       params.require(:startup).permit(:user_id, :nombre, :descripcion, :pagina, :slug, :startup_weekend_id)

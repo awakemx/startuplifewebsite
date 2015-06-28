@@ -1,34 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="evento-title">
+  <div class="container">
+    <div class="row">
+        <div class="col-10">
+          <h2><%= @startup.nombre %></h2>
+        </div>
+        <div class="col-2 push-rigth">
+          <%= link_to 'regresar', startup_weekend_path(@startup.startup_weekend), class: 'btn-default-dark' %>
+        </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @startup.user %>
-</p>
+<div class="container">
+  <div class="row datos-evento">
+    <div class="col-5">
+      <br>
+      <%= image_tag imagen_handler(@startup.logo), alt: @startup.nombre, class: 'logotipo' %>
+      <br>
+      <small class='colorBase'>de <%= link_to @startup.startup_weekend.titulo , startup_weekend_path(@startup.startup_weekend) %></small>
+      <p>
+        <%= @startup.descripcion %>
+      </p>
+      <ul class="actions">
+        <li>
+          <%= internet_handler(@startup.pagina) if @startup.pagina? %>
+        </li>
+      </ul>
+    </div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @startup.nombre %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @startup.descripcion %>
-</p>
-
-<p>
-  <strong>Pagina:</strong>
-  <%= @startup.pagina %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @startup.slug %>
-</p>
-
-<p>
-  <strong>Startup weekend:</strong>
-  <%= @startup.startup_weekend %>
-</p>
-
-<%= link_to 'Edit', edit_startup_path(@startup) %> |
-<%= link_to 'Back', startups_path %>
+    <div class="col-7 ">
+      <div class="back-gray">
+        integrantes
+      </div>
+    </div>
+  </div>
+</div>

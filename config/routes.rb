@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :startups
   resources :ideas_presentadas, only: [:show, :index]
   resources :startup_weekends, only: [:show, :index] do
     resources :ideas_presentadas
