@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @startup_weekend.titulo %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @startup_weekend.logo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @startup_weekend.descripcion %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @startup_weekend.slug %>
+</p>
+
+<%= link_to 'Edit', edit_startup_weekend_path(@startup_weekend) %> |
+<%= link_to 'Back', startup_weekends_path %>

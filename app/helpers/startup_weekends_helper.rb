@@ -1,0 +1,2 @@
+module StartupWeekendsHelper
+end

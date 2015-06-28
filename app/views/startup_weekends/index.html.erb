@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Startup Weekends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Logo</th>
+      <th>Descripcion</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @startup_weekends.each do |startup_weekend| %>
+      <tr>
+        <td><%= startup_weekend.titulo %></td>
+        <td><%= startup_weekend.logo %></td>
+        <td><%= startup_weekend.descripcion %></td>
+        <td><%= startup_weekend.slug %></td>
+        <td><%= link_to 'Show', startup_weekend %></td>
+        <td><%= link_to 'Edit', edit_startup_weekend_path(startup_weekend) %></td>
+        <td><%= link_to 'Destroy', startup_weekend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Startup weekend', new_startup_weekend_path %>
