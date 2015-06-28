@@ -10,6 +10,10 @@ a
   &:hover
     color: darken($bodyColor, 20)
 
+input
+  border: 1px $colorGray solid
+  padding: em(10)
+
 // ID
 
 #wrapper
@@ -34,6 +38,9 @@ footer
   text-align: center
 
 //class
+.btn-default
+  +base-button($bodyColor)
+
 .colorBase
   color: $bodyColor
 .back-gray

@@ -1,0 +1,36 @@
+<div class="container">
+  <br>
+  <div class="cards row">
+    <% @startup_weekends.each do |startup_weekend| %>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-image">
+          <div class="topic">
+            topic
+          </div>
+          <%= link_to(startup_weekend) do %>
+            <img src="<%= startup_weekend.logo %>" alt="<%= startup_weekend.titulo %>">
+          <% end %>
+        </div>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-9">
+              <%= startup_weekend.titulo %>
+            </div>
+            <div class="col-3 push-rigth">
+              <a href="http://www.twitter.com/<%= startup_weekend.twitter %>" target='_blank'><i class="fa fa-twitter"></i></a>
+              <a href="http://www.twitter.com/<%= startup_weekend.facebook %>" target='_blank'><i class="fa fa-facebook"></i></a>
+              <a href="http://<%= startup_weekend.sitioweb %>" target='_blank'><i class="fa fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card-copy">
+          <p>
+            <%= startup_weekend.descripcion %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

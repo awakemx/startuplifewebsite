@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'public#index'
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :startup_weekends
+  root 'startup_weekends#index'
 
   get 'eventos', to: 'public#evento', as: :eventos
   get 'startup', to: 'public#startup', as: :startup

@@ -1,0 +1,59 @@
+<div class="evento-title">
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+          <h2><%= @startup_weekend.titulo %></h2>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row datos-evento">
+    <div class="col-5">
+      <br>
+      <img src="<%= @startup_weekend.logo %>" class="logotipo"> <br>
+      <small class='colorBase'><%= @startup_weekend.fecha.strftime('%d/%B/%Y') %></small>
+      <p>
+        <%= @startup_weekend.descripcion %>
+      </p>
+      <ul class="actions">
+        <li>
+          <a href="http://www.twitter.com/<%= @startup_weekend.twitter %>" target='_blank'><i class="fa fa-twitter"></i> <%= @startup_weekend.twitter %></a>
+        </li>
+        <li>
+          <a href="http://www.twitter.com/<%= @startup_weekend.facebook %>" target='_blank'><i class="fa fa-facebook"></i> <%= @startup_weekend.facebook %></a>
+        </li>
+        <li>
+          <a href="http://<%= @startup_weekend.sitioweb %>" target='_blank'><i class="fa fa-globe"></i> <%= @startup_weekend.sitioweb %></a>
+        </li>
+      </ul>
+      <div class="equipo">
+        <h3>Organizadores</h3>
+        <div class="row">
+          <% @startup_weekend.organizadores.each do |organizador| %>
+            <div class="col-4">
+              <img src="<%= organizador.imagen%>" class="persona">
+              <div class="nombre">
+                <h5><%= organizador.nombre%></h5>
+              </div>
+            </div>
+          <% end %>
+          <div class="col-4">
+            <%= image_tag 'user.svg', class: 'persona'%>
+            <div class="nombre">
+              <h5>Quieres ser organizador?
+                <a href="mailTo:<%= @startup_weekend.correo %>">Escríbeles <i class="fa fa-smile-o"></i></a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7 back-gray">
+      <br>
+      <%= render partial: 'shared/card_event' %>
+    </div>
+  </div>
+</div>
