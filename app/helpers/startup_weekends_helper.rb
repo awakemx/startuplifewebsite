@@ -24,7 +24,7 @@ module StartupWeekendsHelper
   end
 
   def imagen_handler(logotipo)
-     logotipo == "" ? 'https://cdn.brandisty.com/img?id=53bd7b013926f23761000083' : logotipo
+     logotipo == "" ? 'logoGray.svg' : logotipo
   end
 
   def clase
