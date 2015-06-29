@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'pasado', to: 'startup_weekends#pasado', as: :pasado
   get 'presente', to: 'startup_weekends#presente', as: :presente
   get 'registrate', to: 'registros#new', as: :registrate
+  post 'dia', to: 'startup_weekends#day', as: :dia
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'startup_weekends#index'

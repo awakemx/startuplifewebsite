@@ -14,6 +14,8 @@
 <div class="container">
   <div class="row">
     <div class="col-12 calendario">
+      <%#= render partial: 'day', locals: [day: @day] %>
+
       <%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
         <span><%= date.day %></span>
           <div>
@@ -22,7 +24,7 @@
                 Sorry sin eventos.
               </h6>
             <% else %>
-              <h6 class='numero-eventos'><%= link_to "#{sw.count} eventos, suertud@".html_safe , root_path  %> </h6>
+              <h6 class='numero-eventos'><%= link_to "#{sw.count} eventos, suertud@".html_safe, dia_path(dia: date), method: :post %> </h6>
             <% end %>
           </div>
       <% end %>
