@@ -1,8 +1,27 @@
-<%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
-  <%= date %>
-  <% sw.each do |startup| %>
-    <div>
-      <%= startup.titulo %>
+<div class="evento-title-calendar">
+  <div class="container">
+    <div class="row">
+        <div class="col-10">
+          <h2>Calendario de Eventos</h2>
+        </div>
+        <div class="col-2 push-rigth">
+          <%= link_to 'regresar', root_path , class: 'btn-default-dark' %>
+        </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 calendario">
+      <%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
+        <span><%= date.day %></span>
+        <% sw.each do |startup| %>
+          <div>
+            <h6><%= link_to startup.titulo, startup %></h6>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

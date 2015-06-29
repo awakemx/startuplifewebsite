@@ -1,0 +1,45 @@
+.calendario
+  .calendar-header
+    background: $colorGray
+    padding: em(10) 0
+    a:first-child
+      float: left
+      margin-left: em(20)
+    a:last-child
+      float: right
+      margin-right: em(20)
+
+  table
+    width: 100%
+    td
+      padding: 0 !important
+      margin: 0 !important
+    thead
+      background: $bodyColor
+      color: white
+      th
+        text-align: center
+        border: 1px solid darken($colorGray,5)
+    tbody
+      td
+        border: 1px solid darken($colorGray,5)
+        position: relative
+        height: em(100)
+        span
+          position: absolute
+          color: $colorGray
+          top: 5px
+          right: 5px
+        div
+          position: absolute
+          width: 100%
+          top: 5px
+          left: 5px
+          a
+            font-size: 9pt
+            padding: em(2)
+            +border-all(2px)
+            background: $bodyColor
+            color: white !important
+            &:hover
+              background: darken($bodyColor,5)
