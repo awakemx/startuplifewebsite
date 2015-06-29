@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :startups
   resources :ideas_presentadas, only: [:show, :index]
+  resources :registros, only: [:new, :create]
   resources :startup_weekends, only: [:show, :index] do
     resources :ideas_presentadas
     resources :startups
@@ -10,9 +12,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'futuro', to: 'startup_weekends#futuro', as: :futuro
   get 'pasado', to: 'startup_weekends#pasado', as: :pasado
   get 'presente', to: 'startup_weekends#presente', as: :presente
-  get 'futuro', to: 'startup_weekends#futuro', as: :futuro
+  get 'registrate', to: 'registros#new', as: :registrate
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'startup_weekends#index'
