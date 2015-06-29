@@ -25,6 +25,7 @@
         border: 1px solid darken($colorGray,5)
         position: relative
         height: em(100)
+        width: 14%
         span
           position: absolute
           color: $colorGray
@@ -35,11 +36,14 @@
           width: 100%
           top: 5px
           left: 5px
-          a
-            font-size: 9pt
-            padding: em(2)
-            +border-all(2px)
-            background: $bodyColor
-            color: white !important
-            &:hover
-              background: darken($bodyColor,5)
+          h6
+            color: $colorMediumGray
+            display: inline-block
+            &.numero-eventos
+              a
+                color: white
+                background: $bodyColor
+                padding: em(5)
+                +border-all(3px)
+                &:hover
+                  background: darken($bodyColor, 10)

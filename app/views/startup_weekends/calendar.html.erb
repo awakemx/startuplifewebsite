@@ -16,11 +16,15 @@
     <div class="col-12 calendario">
       <%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
         <span><%= date.day %></span>
-        <% sw.each do |startup| %>
           <div>
-            <h6><%= link_to startup.titulo, startup %></h6>
+            <% if  sw.count < 1 %>
+              <h6>
+                Sorry sin eventos.
+              </h6>
+            <% else %>
+              <h6 class='numero-eventos'><%= link_to "#{sw.count} eventos, suertud@".html_safe , root_path  %> </h6>
+            <% end %>
           </div>
-        <% end %>
       <% end %>
     </div>
   </div>
