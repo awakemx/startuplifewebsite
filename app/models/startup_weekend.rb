@@ -18,6 +18,8 @@
 
 class StartupWeekend < ActiveRecord::Base
   extend FriendlyId
+  extend SimpleCalendar
+  has_calendar attribute: :fecha
   friendly_id :titulo, use: :slugged
   has_many :organizadores
   has_many :ideas_presentadas
