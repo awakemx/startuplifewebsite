@@ -11,7 +11,10 @@
     </div>
   <% end %>
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
+      <div class="field">
+        <%= f.text_field :logo, placeholder: 'URL del logotipo'  %>
+      </div>
       <div class="field">
         <%= f.text_field :nombre, placeholder: 'Nombre de la Startup' %>
       </div>
@@ -23,18 +26,7 @@
       </div>
 
     </div>
-    <div class="col-6">
-      <div class="field">
-        <%= f.text_field :logo, placeholder: 'URL del logotipo'  %>
-      </div>
-    </div>
   </div>
-
-
-
-
-
-
 
   <div class="actions">
     <%= f.submit 'Agregar mi Startup', class: 'btn-default' %>

@@ -34,7 +34,6 @@
       </ul>
       <div class="equipo">
         <h3>Organizadores</h3>
-        <%= link_to 'Agrega tu startup', new_startup_weekend_startup_path(@startup_weekend) %>
         <div class="row">
           <% @startup_weekend.organizadores.each do |organizador| %>
             <div class="col-4">
@@ -58,7 +57,16 @@
 
     <div class="col-7 ">
       <div class="back-gray">
-        <h4><i class="fa fa-lightbulb-o"></i> Ideas Trabajadas</h4>
+        <div class="row">
+          <div class="col-7">
+            <h4><i class="fa fa-lightbulb-o"></i> Ideas Trabajadas</h4>
+          </div>
+          <div class="col-5 push-rigth">
+            <% if @startup_weekend.status_class == 'presente' || @startup_weekend.status_class == 'pasado' %>
+              <%= link_to 'Agrega una startup seleccionada', new_startup_weekend_startup_path(@startup_weekend), class: 'btn-default' %>
+            <% end %>
+          </div>
+        </div>
         <% if @startup_weekend.startups.count < 1 %>
           <small>No existen ideas aun</small>
         <% else %>
