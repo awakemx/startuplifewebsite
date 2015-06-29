@@ -1,0 +1,8 @@
+<%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
+  <%= date %>
+  <% sw.each do |startup| %>
+    <div>
+      <%= startup.titulo %>
+    </div>
+  <% end %>
+<% end %>

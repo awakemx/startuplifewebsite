@@ -28,6 +28,10 @@ class StartupWeekendsController < ApplicationController
   def edit
   end
 
+  def calendar
+    @startup_weekends = StartupWeekend.all
+  end
+
   # POST /startup_weekends
   # POST /startup_weekends.json
   def create

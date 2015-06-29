@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :startup_weekends, only: [:show, :index] do
     resources :ideas_presentadas
     resources :startups
+    collection do
+      get 'calendar'
+    end
   end
 
   get 'pasado', to: 'startup_weekends#pasado', as: :pasado
