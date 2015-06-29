@@ -1,28 +1,14 @@
-== README
+== ABOUT THIS PROJECT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The main reason for this project is to have an ordered list of startups that has been
+generated in Mexico on several events like:
 
-Things you may want to cover:
+* Hackaton
+* Startup Weekend
+* Lean Startup Machine
+* Or many other
 
-* Ruby version
+And Star tracking the startup life in México, the first draft of the idea was given by Jorge Zavala (@jzavala), and this site has been created by
+Gize Bonilla (design and frontend development) & Ismael Marín (backend development)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Feel free to start colaborating on the project, and also if you have a request please contact (@igmarin) to more info about it.
