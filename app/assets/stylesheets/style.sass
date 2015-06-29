@@ -41,10 +41,17 @@ select
   padding-bottom: em(70)
 
 header
-  padding: em(10)
+  padding-bottom: em(10)
   text-align: center
   border-bottom: 1px solid $colorGray
-
+  .top-header
+    background: $colorGray
+    margin-bottom: em(10)
+    padding: em(5) 0
+    text-align: right
+    .sessions
+      font-size: 10pt
+      color: darken($colorGray, 20)
 footer
   position: absolute
   bottom: 0
@@ -86,6 +93,12 @@ footer
     color: $colorTwitter
     &:hover
       background: $colorTwitter
+      color: white
+  &.calendario
+    border-color: $colorRed
+    color: $colorRed
+    &:hover
+      background: $colorRed
       color: white
 
 .topic
