@@ -1,3 +1,4 @@
+require 'icalendar'
 # == Schema Information
 #
 # Table name: startup_weekends
@@ -32,29 +33,41 @@ class StartupWeekend < ActiveRecord::Base
   validates :fecha, :titulo, :descripcion, presence: true
 
   def status
-      futuro? || pasado? || en_accion?
+    futuro? || pasado? || en_accion?
   end
 
   def status_class
-      futuro_class? || pasado_class? || en_accion_class?
+    futuro_class? || pasado_class? || en_accion_class?
   end
 
   def futuro?
-      "pasará" if fecha > Date.today + 2.days
+    "pasará" if fecha > Date.today + 2.days
   end
   def pasado?
-      "ya pasó" if fecha < Date.today - 2.days
+    "ya pasó" if fecha < Date.today - 2.days
   end
   def en_accion?
     "en vivo" if !pasado? && !futuro?
   end
   def futuro_class?
-      "futuro" if futuro?
+    "futuro" if futuro?
   end
   def pasado_class?
-      "pasado" if pasado?
+    "pasado" if pasado?
   end
   def en_accion_class?
     "presente" if en_accion?
+  end
+
+  def al_calendario
+    transformar = Icalendar::Calendar.new
+    transformar.event do |e|
+      e.dtstart = Icalendar::Values::Date.new(self.fecha)
+      e.dtend = Icalendar::Values::Date.new(self.fecha + 1.hour)
+      e.summary = self.titulo
+      e.description = self.descripcion
+    end
+    transformar.publish
+    transformar.to_ical
   end
 end
