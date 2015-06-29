@@ -29,8 +29,15 @@
     </div>
 
     <div class="col-7 ">
-      <div class="back-gray">
-        integrantes
+      <div class="back-gray row">
+        <div class="col-4">
+          <%= image_tag 'user.svg', class: 'integrante'%>
+          <div class="nombre">
+            <h5>
+              <%= link_to 'Agregar Integrante', root_path %>
+            </h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
