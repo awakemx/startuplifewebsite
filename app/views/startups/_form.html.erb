@@ -2,7 +2,6 @@
   <% if @startup.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@startup.errors.count, "error") %> prohibited this startup from being saved:</h2>
-
       <ul>
       <% @startup.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,16 +12,20 @@
   <div class="row">
     <div class="col-12">
       <div class="field">
-        <%= f.text_field :logo, placeholder: 'URL del logotipo'  %>
+        <%= f.label :logo, 'URL del Logotipo' %>
+        <%= f.text_field :logo %>
       </div>
       <div class="field">
-        <%= f.text_field :nombre, placeholder: 'Nombre de la Startup' %>
+        <%= f.label :nombre, 'Nombre de la Startup' %>
+        <%= f.text_field :nombre %>
       </div>
       <div class="field">
-        <%= f.text_field :pagina, placeholder: 'Sitio Web de la Startup'  %>
+        <%= f.label :pagina, 'Sitio Web de la Startup' %>
+        <%= f.text_field :pagina %>
       </div>
       <div class="field">
-        <%= f.text_area :descripcion, placeholder: 'Descripcion de la Startup'  %>
+        <%= f.label :descripcion, 'Descripcion de la Startup' %>
+        <%= f.text_area :descripcion %>
       </div>
 
     </div>
