@@ -12,13 +12,13 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'startuplife.com.mx' }
+  config.action_mailer.default_url_options = { host: 'http://startuplifemx.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     :port                 => '587',
     :address              => 'smtp.sendgrid.net',
     :user_name            => ENV['SENDGRID_USERNAME'],
     :password             => ENV['SENDGRID_PASSWORD'],
-    :domain               => 'startuplife.com.mx',
+    :domain               => 'http://startuplifemx.herokuapp.com',
     :authentication       => :plain,
     :enable_starttls_auto => true
   }
