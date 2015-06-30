@@ -1,0 +1,19 @@
+<div class="evento-title">
+  <div class="container">
+    <div class="row">
+        <div class="col-10">
+          <h2>Eventos para el <%= l(@date, format: '%d de %B del %Y') %></h2>
+        </div>
+
+        <div class="col-2 push-rigth">
+          <%= link_to 'regresar', calendar_startup_weekends_path, class: 'btn-default-dark' %>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <div class="cards row">
+    <%= render @startup_weekends %>
+  </div>
+</div>

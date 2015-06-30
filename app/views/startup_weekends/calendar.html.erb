@@ -1,8 +1,33 @@
-<%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
-  <%= date %>
-  <% sw.each do |startup| %>
-    <div>
-      <%= startup.titulo %>
+<div class="evento-title-calendar">
+  <div class="container">
+    <div class="row">
+        <div class="col-10">
+          <h2>Calendario de Eventos</h2>
+        </div>
+        <div class="col-2 push-rigth">
+          <%= link_to 'regresar', root_path , class: 'btn-default-dark' %>
+        </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 calendario">
+      <%#= render partial: 'day', locals: [day: @day] %>
+
+      <%= month_calendar events: @startup_weekends,  table: {class: "table table-bordered"}, tr: {class: "calendar-row"}, td: {class: "day"} do |date, sw| %>
+        <span><%= date.day %></span>
+          <div>
+            <% if  sw.count < 1 %>
+              <h6>
+                Sorry sin eventos.
+              </h6>
+            <% else %>
+              <h6 class='numero-eventos'><%= link_to "#{sw.count} eventos, suertud@".html_safe, dia_path(dia: date), method: :post %> </h6>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,11 @@ class StartupWeekendsController < ApplicationController
     @startup_weekends = StartupWeekend.all
   end
 
+  def day
+    @date = params[:dia].to_date
+    @startup_weekends = StartupWeekend.where(fecha: @date)
+  end
+
   def pasado
     @startup_weekends = StartupWeekend.pasado
   end
