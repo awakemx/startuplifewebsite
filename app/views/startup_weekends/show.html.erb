@@ -20,6 +20,7 @@
       <small class='colorBase'><%= @startup_weekend.fecha.strftime('%d / %B / %Y') %></small>
       <p>
         <%= @startup_weekend.descripcion %>
+        <%= link_to "Veamos", @startup_weekend.al_calendario %>
       </p>
       <ul class="actions">
         <li>
