@@ -31,7 +31,9 @@ RailsAdmin.config do |config|
     object_label_method :titulo
     edit do
       field :titulo
-      field :fecha
+      field :fecha do
+        date_format :default
+      end
       field :correo do
         label 'Correo de Contacto'
       end
