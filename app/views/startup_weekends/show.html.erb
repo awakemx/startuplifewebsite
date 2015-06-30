@@ -68,8 +68,8 @@
             <% end %>
           </div>
         </div>
-        <% if @startup_weekend.startups.count < 1 %>
-          <small>No existen ideas aun</small>
+        <% if @startup_weekend.startups.count < 1 ||  @startup_weekend.status_class == 'futuro'  %>
+          <small>Ya casi llegan los startups</small>
         <% else %>
           <p>
             <small><%= @startup_weekend.startups.count %> ideas trabajadas.</small>
