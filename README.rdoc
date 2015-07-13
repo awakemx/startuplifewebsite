@@ -1,12 +1,7 @@
 == ABOUT THIS PROJECT
 
 The main reason for this project is to have an ordered list of startups that has been
-generated in Mexico on several events like:
-
-* Hackaton
-* Startup Weekend
-* Lean Startup Machine
-* Or many other
+generated in Mexico on the Startup Weekend events 
 
 And Star tracking the startup life in México, the first draft of the idea was given by Jorge Zavala (@jzavala), and this site has been created by
 Gize Bonilla (design and frontend development) & Ismael Marín (backend development)
